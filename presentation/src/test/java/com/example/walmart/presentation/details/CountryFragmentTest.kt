@@ -55,8 +55,9 @@ class CountryFragmentTest {
                     }
                 }
             )
-        } catch (e: Exception) {
-            println("ServiceProvider initialization failed: ${e.message}")
+        } catch (e: IllegalStateException) {
+            // Log it or just ignore, as it means the previous test already set it up
+            println("ServiceProvider already initialized, skipping...")
         }
     }
 

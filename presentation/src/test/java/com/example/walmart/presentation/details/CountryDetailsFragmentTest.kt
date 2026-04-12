@@ -25,16 +25,17 @@
         @Before
         fun setup() {
             try {
-                ServiceProvider.initialize(
-                    presentationModule,
-                    dataModule,
-                    networkModule,
-                    module {
-                        add<android.content.Context>  { ApplicationProvider.getApplicationContext<Application>() }
-                    }
-                )
-            } catch (e: Exception) {
-               println( "ServiceProvider initialization failed: ${e.message}")
+                    ServiceProvider.initialize(
+                        presentationModule,
+                        dataModule,
+                        networkModule,
+                        module {
+                            add<android.content.Context> { ApplicationProvider.getApplicationContext<Application>() }
+                        }
+                    )
+                } catch (e: IllegalStateException) {
+                // Log it or just ignore, as it means the previous test already set it up
+                println("ServiceProvider already initialized, skipping...")
             }
         }
 
