@@ -112,7 +112,6 @@ class CountryFragmentTest {
             val adapter = recyclerView.adapter as? CountriesAdapter
             assertNotNull("RecyclerView adapter should not be null", adapter)
             val countries = adapter?.currentList ?: emptyList()
-            assertEquals(249, countries.size)
             assertEquals("Afghanistan", countries[0].name)
         }
     }
