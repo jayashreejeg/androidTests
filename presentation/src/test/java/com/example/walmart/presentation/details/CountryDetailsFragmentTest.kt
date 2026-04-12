@@ -1,6 +1,7 @@
     package com.example.walmart.presentation.details
 
     import android.app.Application
+    import androidx.appcompat.widget.ActionMenuView
     import androidx.appcompat.widget.Toolbar
     import com.example.walmart.presentation.R
     import androidx.fragment.app.testing.launchFragmentInContainer
@@ -33,7 +34,7 @@
                     }
                 )
             } catch (e: Exception) {
-                // Ignore if ServiceProvider is not initialized
+               println( "ServiceProvider initialization failed: ${e.message}")
             }
         }
 
@@ -52,6 +53,21 @@
                     fragment.getString(R.string.countries_details),
                     toolbar.title
                 )
+
+            }
+        }
+
+        @Test
+        fun `validate back button is displayed`() {
+            val scenario = launchFragmentInContainer<CountryDetailsFragment>(
+                themeResId = R.style.Theme_WallmartExample
+            )
+            scenario.onFragment { fragment ->
+                val backArrow = fragment.requireView()
+                    .findViewById<Toolbar>(R.id.action_bar)
+
+                assertNotNull(backArrow)
+                println(backArrow.isShown)
 
             }
         }
