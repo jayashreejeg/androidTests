@@ -97,6 +97,12 @@ dependencies {
 
     androidTestImplementation("androidx.test:rules:1.5.0")
     androidTestImplementation("androidx.test:runner:1.5.0")
+
+    // Standard Unit Test dependencies
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+
+    // If you are using MockK
+    testImplementation("io.mockk:mockk:1.13.3")
 }
 
 koverReport {
