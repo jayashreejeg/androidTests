@@ -52,19 +52,11 @@ dependencies {
     )
     androidTestImplementation( "androidx.fragment:fragment-testing:1.6.2")
     androidTestImplementation( "androidx.test.ext:junit:1.1.5")
-    androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.5.1")
+    testImplementation ("androidx.test.espresso:espresso-contrib:3.5.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${libs.versions.coroutines.get()}")
     androidTestImplementation(project(mapOf("path" to ":app")))
     androidTestImplementation(project(mapOf("path" to ":app")))
-//    androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2") {
-//        exclude(mapOf("group" to "com.android.support", "module" to "support-annotations"))
-//    }
-//    androidTestImplementation("com.android.support.test:rules:1.0.2")
-//    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:3.0.2") {
-//        exclude(mapOf("group" to "com.android.support", "module" to "support-v4"))
-//        exclude(mapOf("group" to "com.android.support", "module" to "design"))
-//        exclude(mapOf("group" to "com.android.support", "module" to "recyclerview-v7"))
-//    }
+
 
     val navVersion = "2.5.3"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")

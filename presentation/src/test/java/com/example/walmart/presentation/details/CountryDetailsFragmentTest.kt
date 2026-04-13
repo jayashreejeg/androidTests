@@ -1,6 +1,7 @@
     package com.example.walmart.presentation.details
 
     import android.app.Application
+    import android.util.Log.println
     import androidx.appcompat.widget.ActionMenuView
     import androidx.appcompat.widget.Toolbar
     import com.example.walmart.presentation.R
